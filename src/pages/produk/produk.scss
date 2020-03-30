@@ -1,0 +1,19 @@
+page-produk {
+
+    ion-card {
+        width: 48%;
+        position: relative;
+        
+    }
+
+    .container{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .card-title {
+       
+       font-size: 26px;        
+       color: #000;
+    }
+}
