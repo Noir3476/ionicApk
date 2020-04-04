@@ -1,11 +1,18 @@
 page-detail-produk {
+    .img-slider{
+        width: 100%;
+        object-fit: contain;
+    }
+
     .ion-slide-position{
         position: relative;
-        z-index: 0;
-        margin: 0;
-        padding: 0;
         height: 30%;
     }
+
+    .ion-slide{
+        object-fit: contain;
+    }
+
     .ion-item{
         position: relative;
         margin-top: 24px;
@@ -18,12 +25,78 @@ page-detail-produk {
         margin-bottom: 20px;
     }
 
+    .container-icon-harga{
+        display: flex;
+    }
+
     .icon-text{
         margin-top: 6px;
         margin-left: 14px;
     }
 
+    .title-text{
+        font-size: 18px;
+        color: #000;
+        font-style: bold;
+    }
+    
     .data-text{
         margin-top: 8px;
     }
+
+    @media only screen and (max-width: 1024px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 355px;
+        }
+    }
+
+    @media only screen and (max-width: 780px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 228px;
+        }
+    }
+
+    @media only screen and (max-width: 720px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 120px;
+        }
+    }
+
+    @media only screen and (max-width: 600px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 82px;
+        }
+    }
+
+    @media screen and (max-width: 480px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 52px;
+        }
+    }
+
+    @media screen and (max-width: 360px){
+        .title-text-harga{
+            font-size: 18px;
+            color: #000;
+            font-style: bold;
+            margin-left: 20px;
+        }
+    }
+
+
 }

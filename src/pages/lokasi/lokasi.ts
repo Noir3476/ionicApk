@@ -24,15 +24,15 @@ export class LokasiPage {
   }
 
   loadmap(){
-    this.map = leaflet.map('map').setView([-7.9702611, 112.6369973], 16);
+    this.map = leaflet.map('map').setView([-7.855764, 112.703540], 16);
     leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attributions: 'www.tphangout.com',
       maxZoom: 18
     }).addTo(this.map);
-    const markPoint = leaflet.marker([-7.9702611, 112.6369973]);
-    markPoint.bindPopup('<p>Elecomp Software House</p>');
+    const markPoint = leaflet.marker([-7.855764, 112.703540]);
+    markPoint.bindPopup('<p>Dwiraka Graha</p>');
     this.map.addLayer(markPoint);
-  }
+  }  
 
   ionViewWillLeave() {
     this.map.remove();

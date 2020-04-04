@@ -4,30 +4,40 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-  <ion-navbar>
-    <ion-title>detail produk</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content *ngFor="let data of dataProduk"  >
+<!-- <ion-content> -->
+  <ion-fab right bottom padding>
+    <button ion-fab (click)="downloadGambar()"><ion-icon name="download"></ion-icon></button>
+  </ion-fab>
 
-<ion-content *ngFor="let data of dataProduk">
   <ion-slides autoplay="5000" class="ion-slide-position" pager="true" loop="true" speed="300">
 
-    <ion-slide>
-      <img src="https://testinghost3476.000webhostapp.com/assets/{{slider1}}" alt="slider">
+    <ion-slide class="ion-slide">
+      <img class="img-slider" src="https://testinghost3476.000webhostapp.com/assets/img/{{data.gambar_produk}}" alt="slider">
     </ion-slide>
-    <ion-slide>
-      <img src="https://testinghost3476.000webhostapp.com/assets/{{slider2}}" alt="slider">
+    <ion-slide class="ion-slide">
+      <img class="img-slider" src="https://testinghost3476.000webhostapp.com/assets/img/{{data.slider1}}" alt="slider">
     </ion-slide>
-    <ion-slide>
-      <img src="https://testinghost3476.000webhostapp.com/assets/{{slider3}}" alt="slider">
+    <ion-slide class="ion-slide">
+      <img class="img-slider" src="https://testinghost3476.000webhostapp.com/assets/img/{{data.slider2}}" alt="slider">
     </ion-slide>
-    
-  
+    <ion-slide class="ion-slide">
+      <img class="img-slider" src="https://testinghost3476.000webhostapp.com/assets/img/{{data.slider3}}" alt="slider">
+    </ion-slide>
+
   </ion-slides>
 
   <ion-item class="ion-item">
-    <P>Luas Bangunan</P>
+    <div class="container-icon-harga">
+      <P class="title-text">Harga Bangunan </P>
+      <div>
+        <p class="title-text-harga">Rp. {{data.harga_produk}}</p>
+      </div>
+    </div>
+  </ion-item>
+
+  <ion-item class="ion-item">
+    <P class="title-text">Luas Bangunan</P>
     <div class="container-icon">
       <img src="../../assets/icon/maximize.png" alt="icon">
       <p class="icon-text">{{data.tipe}}</p>
@@ -35,7 +45,7 @@
   </ion-item>
 
   <ion-item class="ion-item">
-    <P>Fasilitas Bangunan</P>
+    <P class="title-text">Fasilitas Bangunan</P>
     <div class="container-icon">
       <img src="../../assets/icon/bed.png" alt="icon">
       <p class="icon-text">{{data.kamar_tidur}} Kamar Tidur</p>
@@ -54,11 +64,11 @@
     <ion-grid fixed="true">
       <ion-row>
         <ion-col size="2">
-          <p>Pondasi</p>
+          <p class="title-text">Pondasi</p>
           <p class="data-text">{{data.pondasi}}</p>
         </ion-col>
         <ion-col size="2">
-          <p>Plafon</p>
+          <p class="title-text">Plafon</p>
           <p class="data-text">{{data.plafon}}</p>
         </ion-col>
       </ion-row>
@@ -69,11 +79,11 @@
     <ion-grid>
       <ion-row>
         <ion-col size="2">
-          <p>Sanitasi</p>
+          <p class="title-text">Sanitasi</p>
           <p class="data-text">{{data.sanitasi}}</p>
         </ion-col>
         <ion-col size="2">
-          <p>Carpot</p>
+          <p class="title-text">Carpot</p>
           <p class="data-text">{{data.carpot}}</p>
         </ion-col>
       </ion-row>
@@ -84,11 +94,11 @@
     <ion-grid>
       <ion-row>
         <ion-col size="2">
-          <p>Daun Pintu</p>
+          <p class="title-text">Daun Pintu</p>
           <p>{{data.daun_pintu}}</p>
         </ion-col>
         <ion-col size="2">
-          <p>Lantai</p>
+          <p class="title-text">Lantai</p>
           <p class="data-text">{{data.lantai}}</p>
         </ion-col>
       </ion-row>
@@ -99,11 +109,11 @@
     <ion-grid>
       <ion-row>
         <ion-col size="2">
-          <p>Rangka Atap</p>
+          <p class="title-text">Rangka Atap</p>
           <p class="data-text">{{data.rangka_atap}}</p>
         </ion-col>
         <ion-col size="2">
-          <p>Pagar</p>
+          <p class="title-text">Pagar</p>
           <p class="data-text">{{data.pagar}}</p>
         </ion-col>
       </ion-row>
@@ -114,11 +124,11 @@
     <ion-grid>
       <ion-row>
         <ion-col size="2">
-          <p>Dinding</p>
+          <p class="title-text">Dinding</p>
           <p class="data-text">{{data.dinding}}</p>
         </ion-col>
         <ion-col size="2">
-          <p>Kusen</p>
+          <p class="title-text">Kusen</p>
           <p class="data-text">{{data.kusen}}</p>
         </ion-col>
       </ion-row>

@@ -23,11 +23,8 @@ export class DetailProdukPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
      public toastCtrl: ToastController,
      public authService: AuthServiceProvider,
-     public common: CommonProvider) {
-
-      
-  }
-
+     public common: CommonProvider) { }
+    
   ionViewWillEnter() {
     console.log(this.navParams.get('id_produk'));
     
@@ -35,7 +32,7 @@ export class DetailProdukPage {
     this.getIdProduk = {id_produk:id};
     console.log(this.getIdProduk);
     this.common.presentLoading()
-    this.authService.postData('getDataProduk', this.getIdProduk).then((result)=>{
+    this.authService.postData('getDataProduk', id).then((result)=>{
       this.getDataProduk = result;
       console.log(this.getDataProduk);
       if (this.getDataProduk.detailProduk) {
@@ -60,4 +57,9 @@ export class DetailProdukPage {
     });
   }
 
+  ionViewWillLeave() {
+    this.common.closeLoading();
+  }
+  
 }
+

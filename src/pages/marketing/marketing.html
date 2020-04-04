@@ -11,5 +11,13 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-content padding class="card-background-page">
+    <div *ngFor='let data of dataMarketing'>
+      <a href="{{data.link}}">
+        <ion-card>
+          <img src="https://testinghost3476.000webhostapp.com/assets/img/{{data.logo}}" padding>
+        </ion-card>
+      </a>
+    </div>
 
 </ion-content>

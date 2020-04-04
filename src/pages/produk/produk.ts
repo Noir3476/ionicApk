@@ -44,7 +44,7 @@ export class ProdukPage {
       }
     }, (err) => {
       const toast = this.toastCtrl.create({
-      message: 'Gagal koneksi ke server.'+err,
+      message: 'Periksa koneksi anda',
       duration: 2500
     });
 
@@ -56,6 +56,10 @@ export class ProdukPage {
   goToDetail(idProduk){
     console.log(idProduk);
     this.navCtrl.push(DetailProdukPage, {id_produk:idProduk});
+  }
+
+  ionViewWillLeave() {
+    this.common.closeLoading();
   }
 
 }
