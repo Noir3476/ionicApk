@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-import { CommonProvider } from '../../providers/common/common';
-import { DetailProdukPage } from '../detail-produk/detail-produk';
+import { IonicPage, NavController } from 'ionic-angular';
+import { PilihanProdukPage } from '../pilihan-produk/pilihan-produk';
+
 /**
  * Generated class for the ProdukPage page.
  *
@@ -17,49 +16,10 @@ import { DetailProdukPage } from '../detail-produk/detail-produk';
 })
 export class ProdukPage {
 
-  getDataProduk:any;
-  dataProduk:any;
+  constructor(public navCtrl:NavController){}
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-     public toastCtrl: ToastController,
-     public authService: AuthServiceProvider,
-     public common: CommonProvider) {
-  }
-
-  ionViewWillEnter() {
-    this.common.presentLoading()
-    this.authService.getData('getProduk').then((result)=>{
-      this.getDataProduk = result;
-      if (this.getDataProduk.dataProduk) {
-        this.dataProduk = this.getDataProduk.dataProduk;
-        
-        this.common.closeLoading();
-      }else{
-        const toast = this.toastCtrl.create({
-          message: "Gagal mengambil data",
-          duration: 2000
-        });
-        this.common.closeLoading();
-        toast.present()
-      }
-    }, (err) => {
-      const toast = this.toastCtrl.create({
-      message: 'Periksa koneksi anda',
-      duration: 2500
-    });
-
-    this.common.closeLoading();
-    toast.present();
-    });
-  }
-
-  goToDetail(idProduk){
-    console.log(idProduk);
-    this.navCtrl.push(DetailProdukPage, {id_produk:idProduk});
-  }
-
-  ionViewWillLeave() {
-    this.common.closeLoading();
+  goToPilihan(id_perumahan){
+    this.navCtrl.push(PilihanProdukPage, {id:id_perumahan});
   }
 
 }

@@ -1,17 +1,35 @@
-<ion-content padding class="card-background-page">
+<ion-content class="card-background-page">
+  <ion-slides *ngIf="dataSlider && dataSlider.length" autoplay="5000" class="ion-slide-position" pager="true" loop="true" speed="300">
+    
+    <ion-slide class="ion-slide" *ngFor="let data of dataSlider">
+      <img class="img-slider" src="https://testinghost3476.000webhostapp.com/assets/img/{{data.nama_slider}}" alt="slider">
+    </ion-slide>
+
+  </ion-slides>
+
+  <div class="container">
+    <ion-item-group class="ion-group">
+      <ion-card (click)="goToProduk()">
+        <ion-icon ios="ios-home" md="md-home" class="icon"></ion-icon>
+        <div class="card-title">Produk</div>
+      </ion-card>
+    
+      <ion-card (click)="goToLokasi()">
+        <ion-icon ios="ios-map" md="md-map" class="icon"></ion-icon>
+        <div class="card-title">Lokasi</div>
+      </ion-card>
+    </ion-item-group>
   
-  <ion-card (click)="goToProduk()">
-    <img src="../../assets/imgs/logo.png"/>
-    <div class="card-title">Produk</div>
-  </ion-card>
-
-  <ion-card (click)="goToLokasi()">
-    <img src="../../assets/imgs/logo.png"/>
-    <div class="card-title">Lokasi</div>
-  </ion-card>
-
-  <ion-card (click)="goToMarketing()">
-    <img src="../../assets/imgs/logo.png"/>
-    <div class="card-title">Marketing</div>
-  </ion-card>
+    <ion-item-group class="ion-group">
+      <ion-card (click)="goToMarketing()">
+        <ion-icon ios="logo-instagram" md="logo-instagram" class="icon"></ion-icon>
+        <div class="card-title">Sosial Media</div>
+      </ion-card>
+    
+      <ion-card (click)="goToLogin()">
+        <ion-icon ios="ios-paper-outline" md="md-paper" class="icon"></ion-icon>
+        <div class="card-title">Form Pemesan</div>
+      </ion-card>
+    </ion-item-group>
+  </div>
 </ion-content>

@@ -1,16 +1,16 @@
 page-detail-produk {
     .img-slider{
         width: 100%;
-        object-fit: contain;
+        height: 100%;
     }
 
+    .slide-zoom{
+        height: 100%;
+    }
+    
     .ion-slide-position{
         position: relative;
         height: 30%;
-    }
-
-    .ion-slide{
-        object-fit: contain;
     }
 
     .ion-item{
@@ -42,6 +42,7 @@ page-detail-produk {
     
     .data-text{
         margin-top: 8px;
+        white-space: normal;
     }
 
     @media only screen and (max-width: 1024px){

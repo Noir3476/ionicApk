@@ -26,13 +26,14 @@
 </ion-content> -->
 <ion-content class="card-background-page">
 
-  <ion-card *ngFor="let data of dataProduk">
-    <img src="https://testinghost3476.000webhostapp.com/assets/img/{{data.gambar_produk}}" alt="gambar" (click)="goToDetail(data.id_produk)">
-    <ion-card-content class="container">      
-      <p class="card-title">Rp. {{data.harga_produk}}</p>
-      <button ion-button color="primary" (click)="goToDetail(data.id_produk)" style="margin-left: 18px;">Detail</button>
-    </ion-card-content>
+  <ion-card (click)="goToPilihan(1)" class="card-bg1">
+    <div class="overlay1"></div>
+    <div class="card-title">Dwiraka Graha</div>
+  </ion-card>
 
+  <ion-card (click)="goToPilihan(2)" class="card-bg2">
+    <div class="overlay2"></div>
+    <div class="card-title">Klampok Nirwana</div>     
   </ion-card>
 
 </ion-content>
